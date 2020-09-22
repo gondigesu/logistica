@@ -117,38 +117,28 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/waait/index.js":[function(require,module,exports) {
-const wait = (amount = 0) => new Promise(resolve => setTimeout(resolve, amount));
-
-module.exports = wait;
-
-},{}],"img/foto2.jpg":[function(require,module,exports) {
+})({"img/foto2.jpg":[function(require,module,exports) {
 module.exports = "/foto2.9049905a.jpg";
 },{}],"img/foto3.jpg":[function(require,module,exports) {
 module.exports = "/foto3.ed9f1edf.jpg";
 },{}],"img/foto1.jpg":[function(require,module,exports) {
 module.exports = "/foto1.d42419f0.jpg";
 },{}],"index.js":[function(require,module,exports) {
-"use strict";
-
-var _waait = _interopRequireDefault(require("waait"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const menu = document.querySelector('.menu');
-const fotos = ['foto1', 'foto2', 'foto3', 'foto4'];
 const sticky = menu.offsetTop;
 
-async function changeImage() {
+function changeImage() {
   const img = document.querySelector('.img-razones');
-  await (0, _waait.default)();
-  img.src = require("./img/foto2.jpg");
-  await (0, _waait.default)(5000);
-  img.src = require("./img/foto3.jpg");
-  await (0, _waait.default)(5000);
-  img.src = require("./img/foto1.jpg");
-  await (0, _waait.default)(5000);
-  changeImage();
+  setTimeout(function () {
+    img.src = require('./img/foto2.jpg');
+    setTimeout(function () {
+      img.src = require('./img/foto3.jpg');
+      setTimeout(function () {
+        img.src = require('./img/foto1.jpg');
+        changeImage();
+      }, 3000);
+    }, 3000);
+  }, 3000);
 }
 
 function stickyMenu() {
@@ -161,7 +151,7 @@ function stickyMenu() {
 
 window.addEventListener('scroll', stickyMenu);
 changeImage();
-},{"waait":"node_modules/waait/index.js","./img/foto2.jpg":"img/foto2.jpg","./img/foto3.jpg":"img/foto3.jpg","./img/foto1.jpg":"img/foto1.jpg"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./img/foto2.jpg":"img/foto2.jpg","./img/foto3.jpg":"img/foto3.jpg","./img/foto1.jpg":"img/foto1.jpg"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -189,7 +179,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54767" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56719" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

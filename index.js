@@ -1,22 +1,21 @@
-import wait from 'waait';
-var PORT = process.env.PORT || 5000;
 const menu=document.querySelector('.menu')
-const fotos=['foto1', 'foto2', 'foto3', 'foto4']
 
 const sticky=menu.offsetTop;
 
-async function changeImage(){
+function changeImage(){
     const img=document.querySelector('.img-razones')
-    await wait()
-    img.src=require("./img/foto2.jpg")
-    await wait(5000)
-    img.src=require("./img/foto3.jpg")
-    await wait(5000)
-    img.src=require("./img/foto1.jpg")
-    await wait(5000)
-    changeImage();
+    setTimeout(function(){
+      img.src=require('./img/foto2.jpg')
+      setTimeout(function(){
+        img.src=require('./img/foto3.jpg')
+        setTimeout(function(){
+          img.src=require('./img/foto1.jpg')
+          changeImage();
+        }, 3000)
+      }, 3000)
+    }, 3000)
+    
 }
-
 
 function stickyMenu() {
     if (window.pageYOffset >= sticky) {
@@ -27,6 +26,5 @@ function stickyMenu() {
 }
 
 window.addEventListener('scroll', stickyMenu);
-
 
 changeImage();
