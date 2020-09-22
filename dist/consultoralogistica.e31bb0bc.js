@@ -117,24 +117,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"img/foto2.jpg":[function(require,module,exports) {
-module.exports = "/foto2.9049905a.jpg";
-},{}],"img/foto3.jpg":[function(require,module,exports) {
-module.exports = "/foto3.ed9f1edf.jpg";
-},{}],"img/foto1.jpg":[function(require,module,exports) {
-module.exports = "/foto1.d42419f0.jpg";
-},{}],"index.js":[function(require,module,exports) {
-const menu = document.querySelector('.menu');
-const sticky = menu.offsetTop;
+})({"index.js":[function(require,module,exports) {
+var menu = document.querySelector('.menu');
+var sticky = menu.offsetTop;
 
 function changeImage() {
-  const img = document.querySelector('.img-razones');
+  var img = document.querySelector('.img-razones');
   setTimeout(function () {
-    img.src = require('./img/foto2.jpg');
+    img.src = './img/foto2.jpg';
     setTimeout(function () {
-      img.src = require('./img/foto3.jpg');
+      img.src = './img/foto3.jpg';
       setTimeout(function () {
-        img.src = require('./img/foto1.jpg');
+        img.src = './img/foto1.jpg';
         changeImage();
       }, 3000);
     }, 3000);
@@ -151,7 +145,7 @@ function stickyMenu() {
 
 window.addEventListener('scroll', stickyMenu);
 changeImage();
-},{"./img/foto2.jpg":"img/foto2.jpg","./img/foto3.jpg":"img/foto3.jpg","./img/foto1.jpg":"img/foto1.jpg"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

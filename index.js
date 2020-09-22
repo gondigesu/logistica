@@ -5,11 +5,11 @@ const sticky=menu.offsetTop;
 function changeImage(){
     const img=document.querySelector('.img-razones')
     setTimeout(function(){
-      img.src=require('./img/foto2.jpg')
+      img.src='./img/foto2.jpg'
       setTimeout(function(){
-        img.src=require('./img/foto3.jpg')
+        img.src='./img/foto3.jpg'
         setTimeout(function(){
-          img.src=require('./img/foto1.jpg')
+          img.src='./img/foto1.jpg'
           changeImage();
         }, 3000)
       }, 3000)
