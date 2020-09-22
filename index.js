@@ -1,4 +1,5 @@
 import wait from 'waait';
+var PORT = process.env.PORT || 5000;
 const menu=document.querySelector('.menu')
 const fotos=['foto1', 'foto2', 'foto3', 'foto4']
 
